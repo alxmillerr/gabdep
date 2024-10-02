@@ -27,7 +27,7 @@
             cursor: pointer;
         }
 
-        /* Estilo para a tela com a estrela gigante */
+        /* Estilo para a tela com a estrela gigante (inicialmente invisível) */
         #estrela-container {
             display: none;
             background-color: white;
@@ -80,6 +80,7 @@
 </head>
 <body>
 
+    <!-- Botão centralizado -->
     <button id="botao">CLIQUE AQUI</button>
 
     <!-- Container para a estrela gigante e as estrelas menores -->
@@ -98,8 +99,8 @@
     <script>
         // Script para exibir a estrela e esconder o botão ao clicar
         document.getElementById('botao').addEventListener('click', function() {
-            document.body.style.backgroundColor = 'white';  // Muda o fundo para branco
             document.getElementById('estrela-container').style.display = 'flex';  // Mostra a tela com a estrela
+            document.body.style.backgroundColor = 'white';  // Muda o fundo para branco
             document.getElementById('botao').style.display = 'none';              // Esconde o botão
         });
     </script>
