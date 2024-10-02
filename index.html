@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botão e Estrela</title>
     <style>
-        /* Estilo para o botão grande */
+        /* Estilo para o corpo da página */
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Estilo para o botão */
         #botao {
             font-size: 40px;
             padding: 20px 40px;
-            background-color: #4CAF50;
-            color: white;
+            background-color: white;
+            color: black;
             border: none;
             border-radius: 12px;
             cursor: pointer;
@@ -19,16 +30,15 @@
         /* Estilo para a estrela gigante */
         #estrela {
             display: none;
-            font-size: 200px;
+            font-size: 300px;
             color: gold;
             text-align: center;
-            margin-top: 50px;
         }
 
         #estrela span {
             display: block;
-            font-size: 40px;
-            color: black;
+            font-size: 60px;
+            color: white;
         }
     </style>
 </head>
@@ -37,12 +47,13 @@
     <button id="botao">CLIQUE AQUI</button>
 
     <!-- Estrela gigante com o texto "Bom dia" -->
-    <div id="estrela">★<span>gab deposito</span></div>
+    <div id="estrela">★<span>Bom dia</span></div>
 
     <script>
-        // Script para exibir a estrela ao clicar no botão
+        // Script para exibir a estrela e esconder o botão ao clicar
         document.getElementById('botao').addEventListener('click', function() {
-            document.getElementById('estrela').style.display = 'block';
+            document.getElementById('estrela').style.display = 'block';  // Mostra a estrela
+            document.getElementById('botao').style.display = 'none';     // Esconde o botão
         });
     </script>
 
