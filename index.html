@@ -27,18 +27,54 @@
             cursor: pointer;
         }
 
-        /* Estilo para a estrela gigante */
-        #estrela {
+        /* Estilo para a tela com a estrela gigante */
+        #estrela-container {
             display: none;
-            font-size: 300px;
-            color: gold;
-            text-align: center;
+            background-color: white;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
 
+        /* Estilo para a estrela gigante */
+        #estrela {
+            font-size: 500px;
+            color: gold;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Estilo para o texto dentro da estrela */
         #estrela span {
-            display: block;
-            font-size: 60px;
-            color: white;
+            position: absolute;
+            font-size: 80px;
+            color: black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Estilo para as estrelas piscantes menores */
+        .estrela-menor {
+            position: absolute;
+            font-size: 40px;
+            color: gold;
+            animation: piscar 1.5s infinite alternate;
+            z-index: 1;
+        }
+
+        /* Animação para as estrelas menores piscarem */
+        @keyframes piscar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -46,14 +82,24 @@
 
     <button id="botao">CLIQUE AQUI</button>
 
-    <!-- Estrela gigante com o texto "Bom dia" -->
-    <div id="estrela">★<span>Bom dia</span></div>
+    <!-- Container para a estrela gigante e as estrelas menores -->
+    <div id="estrela-container">
+        <!-- Estrela gigante -->
+        <div id="estrela">★<span>Bom dia</span></div>
+        
+        <!-- Estrelas menores piscando -->
+        <div class="estrela-menor" style="top: 10%; left: 20%;">★</div>
+        <div class="estrela-menor" style="top: 30%; left: 60%;">★</div>
+        <div class="estrela-menor" style="top: 50%; left: 80%;">★</div>
+        <div class="estrela-menor" style="top: 70%; left: 40%;">★</div>
+        <div class="estrela-menor" style="top: 90%; left: 10%;">★</div>
+    </div>
 
     <script>
         // Script para exibir a estrela e esconder o botão ao clicar
         document.getElementById('botao').addEventListener('click', function() {
-            document.getElementById('estrela').style.display = 'block';  // Mostra a estrela
-            document.getElementById('botao').style.display = 'none';     // Esconde o botão
+            document.getElementById('estrela-container').style.display = 'flex';  // Mostra a tela com a estrela
+            document.getElementById('botao').style.display = 'none';              // Esconde o botão
         });
     </script>
 
