@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão e Estrela</title>
+    <style>
+        /* Estilo para o botão grande */
+        #botao {
+            font-size: 40px;
+            padding: 20px 40px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        /* Estilo para a estrela gigante */
+        #estrela {
+            display: none;
+            font-size: 200px;
+            color: gold;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #estrela span {
+            display: block;
+            font-size: 40px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="botao">CLIQUE AQUI</button>
+
+    <!-- Estrela gigante com o texto "Bom dia" -->
+    <div id="estrela">★<span>gab deposito</span></div>
+
+    <script>
+        // Script para exibir a estrela ao clicar no botão
+        document.getElementById('botao').addEventListener('click', function() {
+            document.getElementById('estrela').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
