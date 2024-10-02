@@ -13,7 +13,6 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            flex-direction: column;
         }
 
         /* Estilo para o botão */
@@ -33,12 +32,12 @@
             background-color: white;
             width: 100vw;
             height: 100vh;
-            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
             justify-content: center;
             align-items: center;
-            position: relative;
             overflow: hidden;
-            flex-direction: column;
         }
 
         /* Estilo para a estrela gigante */
@@ -46,7 +45,6 @@
             font-size: 400px;
             color: gold;
             position: relative;
-            z-index: 2;
         }
 
         /* Estilo para o texto dentro da estrela */
@@ -65,7 +63,6 @@
             font-size: 40px;
             color: gold;
             animation: piscar 1.5s infinite alternate;
-            z-index: 1;
         }
 
         /* Animação para as estrelas menores piscarem */
@@ -87,7 +84,7 @@
     <!-- Container para a estrela gigante e as estrelas menores -->
     <div id="estrela-container">
         <!-- Estrela gigante -->
-        <div id="estrela">★<span>depósito</span></div>
+        <div id="estrela">★<span>depósito!</span></div>
         
         <!-- Estrelas menores piscando -->
         <div class="estrela-menor" style="top: 10%; left: 20%;">★</div>
@@ -100,12 +97,11 @@
     <script>
         // Script para exibir a estrela e esconder o botão ao clicar
         document.getElementById('botao').addEventListener('click', function() {
-            document.body.style.backgroundColor = 'white';  // Muda o fundo para branco
             document.getElementById('estrela-container').style.display = 'flex';  // Mostra a tela com a estrela
+            document.body.style.backgroundColor = 'white';  // Muda o fundo para branco
             document.getElementById('botao').style.display = 'none';              // Esconde o botão
         });
     </script>
 
 </body>
 </html>
-
