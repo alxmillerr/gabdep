@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botão e Estrela</title>
     <style>
-        /* Estilo para o corpo da página */
+        /* Estilo para o corpo da página inicial */
         body {
             background-color: black;
             display: flex;
@@ -42,7 +42,7 @@
 
         /* Estilo para a estrela gigante */
         #estrela {
-            font-size: 500px;
+            font-size: 400px;
             color: gold;
             position: relative;
             z-index: 2;
@@ -51,7 +51,7 @@
         /* Estilo para o texto dentro da estrela */
         #estrela span {
             position: absolute;
-            font-size: 80px;
+            font-size: 60px;  /* Texto menor dentro da estrela */
             color: black;
             top: 50%;
             left: 50%;
@@ -85,7 +85,7 @@
     <!-- Container para a estrela gigante e as estrelas menores -->
     <div id="estrela-container">
         <!-- Estrela gigante -->
-        <div id="estrela">★<span>depósito</span></div>
+        <div id="estrela">★<span>Bom dia</span></div>
         
         <!-- Estrelas menores piscando -->
         <div class="estrela-menor" style="top: 10%; left: 20%;">★</div>
@@ -98,6 +98,7 @@
     <script>
         // Script para exibir a estrela e esconder o botão ao clicar
         document.getElementById('botao').addEventListener('click', function() {
+            document.body.style.backgroundColor = 'white';  // Muda o fundo para branco
             document.getElementById('estrela-container').style.display = 'flex';  // Mostra a tela com a estrela
             document.getElementById('botao').style.display = 'none';              // Esconde o botão
         });
